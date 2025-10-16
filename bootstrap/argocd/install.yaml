@@ -1,0 +1,15 @@
+# ArgoCD Installation
+# Install with: kubectl apply -k bootstrap/argocd/
+# Or use: kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+---
+# This is a placeholder
+# For actual installation, use one of:
+# 1. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+# 2. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/ha/install.yaml (HA setup)
+# 3. Helm chart: helm install argocd argo/argo-cd -n argocd
+# 4. Kustomize with custom overlays
