@@ -47,6 +47,16 @@ This is a bootstrap repository - ArgoCD manages itself and all other infrastruct
 
 ## Standards
 
+### Commit Messages
+- Follow [Conventional Commits](https://www.conventionalcommits.org/) specification
+- Format: `<type>[optional scope]: <description>`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `ci`, `perf`
+- Examples:
+  - `feat(nginx): add nginx deployment to argocd namespace`
+  - `fix(argocd): correct sync policy configuration`
+  - `chore(apps): update repository URLs`
+  - `docs: update README with bootstrap instructions`
+
 ### YAML Format
 - Use 2 spaces for indentation
 - Include meaningful metadata (labels, annotations)
