@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: services
   namespace: argocd
   finalizers:
-    - argocd.argoproj.io/resources-finalizer
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: https://github.com/pk-hash/test1.git
+    repoURL: https://github.com/pk-hash/test2.git
     targetRevision: HEAD
-    path: apps
+    path: argocd
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -18,11 +18,10 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      allowEmpty: false
     syncOptions:
-      - CreateNamespace=true
+      - CreateNamespace=false
     retry:
-      limit: 5
+      limit: 3
       backoff:
         duration: 5s
         factor: 2
